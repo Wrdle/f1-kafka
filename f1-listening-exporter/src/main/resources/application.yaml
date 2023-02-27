@@ -1,0 +1,12 @@
+app:
+  num-messages: 10
+  udp-listener:
+    port: 20777
+
+  exporters:
+    json.enabled: true
+    udp.enabled: true
+
+logging:
+  level:
+    root: INFO

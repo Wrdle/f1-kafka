@@ -1,0 +1,22 @@
+kafka:
+  topicName: ${KAFKA_TOPIC:hello_topic}
+
+app:
+  udpListener:
+    enabled: false
+  packetReplay:
+    enabled: true
+    file: file:test_replay.json
+  jsonExporter:
+    enabled: false
+
+spring:
+  kafka:
+    bootstrap-servers: ${BOOTSTRAP_SERVERS:localhost:9092}
+    producer:
+      bootstrap-servers: ${BOOTSTRAP_SERVERS:localhost:9092}
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      group-id: group_id
+
+auto.create.topics.enable: true

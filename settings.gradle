@@ -1,0 +1,20 @@
+pluginManagement {
+    plugins {
+        id "org.jetbrains.kotlin.jvm" version "$kotlinVersion"
+        id "org.jetbrains.kotlin.plugin.spring" version "$kotlinVersion"
+        id "org.jetbrains.kotlin.kapt" version "$kotlinVersion"
+        id "org.springframework.boot" version "$springBootVersion"
+        id "io.spring.dependency-management" version "$springDependencyManagementVersion"
+        id "io.gitlab.arturbosch.detekt" version "$detektVersion"
+    }
+
+    repositories {
+        gradlePluginPortal()
+    }
+}
+
+include 'f1-listening-exporter'
+include 'f1-kafka-udp-producer'
+include 'f1-kafka-streams-aggregator'
+
+rootProject.name = 'f1-kafka'
