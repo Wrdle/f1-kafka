@@ -11,5 +11,5 @@ import org.springframework.kafka.annotation.EnableKafkaStreams
 class F1KafkaStreamsAggregator
 
 fun main(args: Array<String>) {
-    runApplication<F1KafkaStreamsAggregator>(*args)
+    runApplication<F1KafkaStreamsAggregator>(args = args)
 }
