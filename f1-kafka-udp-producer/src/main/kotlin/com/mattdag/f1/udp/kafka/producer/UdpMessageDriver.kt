@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component
 
 @Component
 @ConditionalOnProperty("app.udpListener.enabled")
-class MessageDriver(private val monitor: PacketEventMonitorService) : CommandLineRunner {
+class UdpMessageDriver(private val monitor: PacketEventMonitorService) : CommandLineRunner {
     override fun run(vararg args: String?) {
         println("Starting producer")
 

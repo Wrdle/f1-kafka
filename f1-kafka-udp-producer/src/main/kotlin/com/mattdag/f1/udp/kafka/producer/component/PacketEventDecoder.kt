@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component
 
 @Component
 class PacketEventDecoder : MessageToMessageDecoder<DatagramPacket>() {
-    var packetDecoder = PacketDecoder()
+    private var packetDecoder = PacketDecoder()
 
     @Throws(Exception::class)
     override fun decode(

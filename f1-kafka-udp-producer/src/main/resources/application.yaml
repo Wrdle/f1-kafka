@@ -6,9 +6,7 @@ app:
     enabled: false
   packetReplay:
     enabled: true
-    file: file:test_replay.json
-  jsonExporter:
-    enabled: false
+    folder: file:./sample-data/udp/
 
 spring:
   kafka:

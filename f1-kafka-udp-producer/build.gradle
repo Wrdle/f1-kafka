@@ -25,6 +25,7 @@ dependencies {
     implementation "io.ppatierno:f1-telemetry:$f1TelemeteryVersion"
     implementation "io.netty:netty-all:$nettyVersion"
     implementation "com.fasterxml.jackson.core:jackson-databind:$jacksonDatabindVersion"
+    implementation "org.valiktor:valiktor-core:$valiktorVersion"
 
     testImplementation "org.springframework.boot:spring-boot-starter-test"
     testImplementation "org.springframework.kafka:spring-kafka-test"

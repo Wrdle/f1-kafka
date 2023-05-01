@@ -17,6 +17,7 @@ import io.ppatierno.formula1.packets.PacketLobbyInfoData
 import io.ppatierno.formula1.packets.PacketMotionData
 import io.ppatierno.formula1.packets.PacketParticipantsData
 import io.ppatierno.formula1.packets.PacketSessionData
+import mu.KotlinLogging
 import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
 import org.springframework.stereotype.Component
@@ -29,11 +30,12 @@ class PacketReplayCommandLineRunner(
     private val packetReplayService: PacketReplayService
 ) : CommandLineRunner {
 
-    val replayProperties: ReplayProperties = applicationConfig.packetReplay
-    val objectMapper: ObjectMapper = ObjectMapper()
+    private val replayProperties: ReplayProperties = applicationConfig.packetReplay
+    private val logger = KotlinLogging.logger {}
+    private val objectMapper: ObjectMapper = ObjectMapper()
 
     override fun run(vararg args: String?) {
-        println("Starting packet replay")
+        logger.info { "Starting packet replay" }
         if (isValidFile(replayProperties.file)) {
             val packetsWrappers = getFileContents(replayProperties.file!!)
             val packets = decodeJsonPackets(packetsWrappers)

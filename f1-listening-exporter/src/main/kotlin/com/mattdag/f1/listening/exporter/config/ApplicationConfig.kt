@@ -14,7 +14,7 @@ private const val MAX_PORT_NUMBER = 65535
 data class ApplicationConfig(
     val numMessages: Long = 1000,
     val udpListener: UdpProperties = UdpProperties(),
-    val exporters: ExporterProperties = ExporterProperties()
+    val exporters: ExporterProperties = ExporterProperties(),
 ) {
     init {
         validate(this) {

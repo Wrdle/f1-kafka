@@ -1,0 +1,12 @@
+spring:
+  kafka:
+    bootstrap-servers: ${BOOTSTRAP_SERVERS:localhost:9092}
+    streams:
+      application-id: f1-kafka-streams-aggregator
+    consumer:
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringSerializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+auto.create.topics.enable: true
