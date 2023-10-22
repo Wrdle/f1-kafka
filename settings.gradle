@@ -13,6 +13,7 @@ pluginManagement {
     }
 }
 
+include 'common'
 include 'f1-listening-exporter'
 include 'f1-kafka-udp-producer'
 include 'f1-kafka-streams-aggregator'

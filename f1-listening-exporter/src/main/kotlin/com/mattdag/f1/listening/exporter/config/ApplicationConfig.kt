@@ -1,8 +1,7 @@
 package com.mattdag.f1.listening.exporter.config
 
-import mu.KotlinLogging
+import io.github.oshai.kotlinlogging.KotlinLogging
 import org.springframework.boot.context.properties.ConfigurationProperties
-import org.springframework.boot.context.properties.ConstructorBinding
 import org.valiktor.functions.isBetween
 import org.valiktor.functions.isPositive
 import org.valiktor.validate
@@ -10,7 +9,6 @@ import org.valiktor.validate
 private const val MAX_PORT_NUMBER = 65535
 
 @ConfigurationProperties(prefix = "app")
-@ConstructorBinding
 data class ApplicationConfig(
     val numMessages: Long = 1000,
     val udpListener: UdpProperties = UdpProperties(),
@@ -26,7 +24,6 @@ data class ApplicationConfig(
     }
 }
 
-@ConstructorBinding
 data class UdpProperties(
     var port: Int = 20777
 ) {
@@ -37,18 +34,15 @@ data class UdpProperties(
     }
 }
 
-@ConstructorBinding
 data class ExporterProperties(
     var json: JsonExporterProperties = JsonExporterProperties(),
     var udp: UdpRawExporterProperties = UdpRawExporterProperties()
 )
 
-@ConstructorBinding
 data class JsonExporterProperties(
     var enabled: Boolean = false
 )
 
-@ConstructorBinding
 data class UdpRawExporterProperties(
     var enabled: Boolean = true
 )

@@ -2,8 +2,8 @@ package com.mattdag.f1.udp.kafka.producer.service
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.mattdag.f1.udp.kafka.producer.component.TopicMapper
+import io.github.oshai.kotlinlogging.KotlinLogging
 import io.ppatierno.formula1.packets.Packet
-import mu.KotlinLogging
 import org.springframework.stereotype.Service
 
 private const val MILLIS_MULTIPLIER = 1000

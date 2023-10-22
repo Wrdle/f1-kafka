@@ -5,6 +5,7 @@ import com.mattdag.f1.udp.kafka.producer.config.ApplicationConfig
 import com.mattdag.f1.udp.kafka.producer.config.ReplayProperties
 import com.mattdag.f1.udp.kafka.producer.data.JsonDataWrapper
 import com.mattdag.f1.udp.kafka.producer.service.PacketReplayService
+import io.github.oshai.kotlinlogging.KotlinLogging
 import io.ppatierno.formula1.enums.PacketId
 import io.ppatierno.formula1.packets.Packet
 import io.ppatierno.formula1.packets.PacketCarSetupData
@@ -17,7 +18,6 @@ import io.ppatierno.formula1.packets.PacketLobbyInfoData
 import io.ppatierno.formula1.packets.PacketMotionData
 import io.ppatierno.formula1.packets.PacketParticipantsData
 import io.ppatierno.formula1.packets.PacketSessionData
-import mu.KotlinLogging
 import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
 import org.springframework.stereotype.Component

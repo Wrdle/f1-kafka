@@ -1,0 +1,18 @@
+<component name="ProjectRunConfigurationManager">
+    <configuration default="false" name="F1UdpKafkaProducerApplication" type="SpringBootApplicationConfigurationType"
+                   factoryName="Spring Boot" nameIsGenerated="true">
+        <option name="ACTIVE_PROFILES" value="dev"/>
+        <module name="f1-kafka.f1-kafka-udp-producer.main"/>
+        <option name="SPRING_BOOT_MAIN_CLASS"
+                value="com.mattdag.f1.udp.kafka.producer.F1UdpKafkaProducerApplicationKt"/>
+        <extension name="coverage">
+            <pattern>
+                <option name="PATTERN" value="com.mattdag.f1.udp.kafka.producer.*"/>
+                <option name="ENABLED" value="true"/>
+            </pattern>
+        </extension>
+        <method v="2">
+            <option name="Make" enabled="true"/>
+        </method>
+    </configuration>
+</component>

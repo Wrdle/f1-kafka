@@ -1,11 +1,12 @@
 package com.mattdag.f1.udp.kafka.producer
 
+import com.mattdag.f1.kafka.common.Decoder
 import com.mattdag.f1.udp.kafka.producer.service.PacketReplayService
+import io.github.oshai.kotlinlogging.KotlinLogging
 import io.netty.buffer.Unpooled
 import io.netty.channel.socket.DatagramPacket
 import io.ppatierno.formula1.PacketDecoder
 import io.ppatierno.formula1.packets.Packet
-import mu.KotlinLogging
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
@@ -22,6 +23,7 @@ class ReplayMessageDriver(private val packetReplayService: PacketReplayService) 
 
     private val logger = KotlinLogging.logger {}
     private val packetDecoder = PacketDecoder()
+    private val decoder = Decoder()
 
     override fun run(vararg args: String?) {
         logger.info { "Starting packet replay..." }
@@ -39,7 +41,8 @@ class ReplayMessageDriver(private val packetReplayService: PacketReplayService) 
                 val address = InetSocketAddress(0)
                 val datagramPacket = DatagramPacket(byteBuf, address)
 
+                val test = decoder.decode(datagramPacket.content())
+                datagramPacket.content().resetReaderIndex()
                 packetDecoder.decode(datagramPacket.content())
             }
 }
-

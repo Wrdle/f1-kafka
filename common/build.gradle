@@ -1,0 +1,30 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
+plugins {
+    id 'idea'
+    id 'org.jetbrains.kotlin.jvm'
+    id 'org.jetbrains.kotlin.kapt'
+    id 'io.gitlab.arturbosch.detekt'
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.9.0'
+}
+
+group = "com.mattdag"
+version = "0.0.1-SNAPSHOT"
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0"
+    implementation "io.netty:netty-all:$nettyVersion"
+}
+
+tasks.withType(KotlinCompile).configureEach {
+    compilerOptions {
+        freeCompilerArgs = ['-Xjsr305=strict']
+        jvmTarget = JvmTarget.JVM_17
+    }
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

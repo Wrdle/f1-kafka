@@ -18,6 +18,7 @@ class PacketForwarder(
 
     override fun channelRead0(ctx: ChannelHandlerContext, packet: Packet) {
         val topic = topicMapper.getTopic(packet)
+        packet.header.packetId
         val wrappedSerializedPacket = JsonDataWrapperUtils.createPrettyJsonDataWrapper(packet)
         messageProducer.sendMessage(
             topic,

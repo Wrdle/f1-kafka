@@ -2,7 +2,7 @@ package com.mattdag.f1.listening.exporter.exporter.udp
 
 import com.mattdag.f1.listening.exporter.exporter.Exporter
 import com.mattdag.f1.listening.exporter.model.DecodedPacket
-import mu.KotlinLogging
+import io.github.oshai.kotlinlogging.KotlinLogging
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
 import org.springframework.stereotype.Service
 

@@ -2,7 +2,7 @@ package com.mattdag.f1.listening.exporter.model
 
 import io.ppatierno.formula1.packets.Packet
 
-data class DecodedPacket(val packet: Packet, val rawBytes: ByteArray) {
+data class DecodedPacket(val packet: Packet?, val rawBytes: ByteArray) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (javaClass != other?.javaClass) return false

@@ -1,9 +1,9 @@
 package com.mattdag.f1.listening.exporter
 
 import com.mattdag.f1.listening.exporter.service.PacketEventMonitorService
+import io.github.oshai.kotlinlogging.KotlinLogging
 import io.netty.channel.Channel
 import io.ppatierno.formula1.PacketConfig
-import mu.KotlinLogging
 import org.springframework.boot.CommandLineRunner
 import org.springframework.stereotype.Component
 

@@ -1,5 +1,12 @@
 rootProject.allprojects {
     repositories {
+        maven {
+            url = uri("https://maven.pkg.github.com/wrdle/formula1-telemetry")
+            credentials {
+                username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_USERNAME")
+                password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_TOKEN")
+            }
+        }
         mavenCentral()
         mavenLocal()
     }

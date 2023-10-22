@@ -1,7 +1,6 @@
 package com.mattdag.f1.udp.kafka.producer.config
 
 import org.springframework.boot.context.properties.ConfigurationProperties
-import org.springframework.boot.context.properties.ConstructorBinding
 import org.valiktor.functions.isNotBlank
 import org.valiktor.validate
 import java.io.File
@@ -9,7 +8,6 @@ import java.io.File
 const val DEFAULT_PORT = 20777
 
 @ConfigurationProperties(prefix = "app")
-@ConstructorBinding
 data class ApplicationConfig(
     val producer: ProducerProperties = ProducerProperties(),
     val udpListener: UdpProperties = UdpProperties(),
@@ -21,7 +19,6 @@ class ProducerProperties {
     val topicConfiguration: TopicConfiguration = TopicConfiguration()
 }
 
-@ConstructorBinding
 data class TopicConfiguration(
     val carSetupDataTopic: String = "F1--CAR-SETUP-DATA--SRC",
     val carStatusDataTopic: String = "F1--CAR-STATUS-DATA--SRC",

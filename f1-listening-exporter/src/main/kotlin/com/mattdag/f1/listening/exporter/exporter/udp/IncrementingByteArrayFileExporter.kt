@@ -20,6 +20,6 @@ class IncrementingByteArrayFileExporter {
     fun saveByteArrayToFile(byteArray: ByteArray) {
         val outputFile = File("$folderName/$counter.udp")
         outputFile.writeBytes(byteArray)
-        counter++;
+        counter++
     }
 }

@@ -4,7 +4,7 @@ app:
     port: 20777
 
   exporters:
-    json.enabled: true
+    json.enabled: false
     udp.enabled: true
 
 logging:

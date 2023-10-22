@@ -3,9 +3,9 @@ package com.mattdag.f1.listening.exporter.service
 import com.mattdag.f1.listening.exporter.config.ApplicationConfig
 import com.mattdag.f1.listening.exporter.exporter.Exporter
 import com.mattdag.f1.listening.exporter.model.DecodedPacket
+import io.github.oshai.kotlinlogging.KotlinLogging
 import io.netty.channel.ChannelHandlerContext
 import io.netty.channel.SimpleChannelInboundHandler
-import mu.KotlinLogging
 import org.springframework.stereotype.Service
 
 @Service

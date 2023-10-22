@@ -1,12 +1,9 @@
-kafka:
-  topicName: ${KAFKA_TOPIC:hello_topic}
-
 app:
   udpListener:
     enabled: false
   packetReplay:
     enabled: true
-    folder: file:./sample-data/udp/
+    folder: file:./test/
 
 spring:
   kafka:
@@ -14,7 +11,7 @@ spring:
     producer:
       bootstrap-servers: ${BOOTSTRAP_SERVERS:localhost:9092}
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       group-id: group_id
 
 auto.create.topics.enable: true
