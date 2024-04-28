@@ -85,7 +85,7 @@ data class PacketSessionData(
         gamePaused = byteBuffer.readUnsignedByte()
         isSpectating = byteBuffer.readUnsignedByte()
         spectatorCarIndex = byteBuffer.readUnsignedByte()
-        sliProNativeSupport = byteBuffer.readUnsignedByte().toInt() == 1
+        sliProNativeSupport = byteBuffer.readUnsignedByte().toInt().toBoolean()
         numMarshalZones = byteBuffer.readUnsignedByte()
         marshalZones = (0 until MARSHAL_ZONES).map { MarshalZone().apply { fill(byteBuffer) } }
         safetyCarStatus = SafetyCarStatus.fromValue(byteBuffer.readUnsignedByte())
@@ -101,10 +101,10 @@ data class PacketSessionData(
         pitStopWindowIdealLap = byteBuffer.readUnsignedByte()
         pitStopWindowLatestLap = byteBuffer.readUnsignedByte()
         pitStopRejoinPosition = byteBuffer.readUnsignedByte()
-        steeringAssist = byteBuffer.readUnsignedByte().toInt() == 1
+        steeringAssist = byteBuffer.readUnsignedByte().toBoolean()
         brakingAssist = BrakingAssist.fromValue(byteBuffer.readUnsignedByte())
         gearboxAssist = GearboxAssist.fromValue(byteBuffer.readUnsignedByte())
-        pitAssist = byteBuffer.readUnsignedByte().toInt() == 1
+        pitAssist = byteBuffer.readUnsignedByte().toInt().toBoolean()
         pitReleaseAssist = byteBuffer.readUnsignedByte().toBoolean()
         ersAssist = byteBuffer.readUnsignedByte().toBoolean()
         drsAssist = byteBuffer.readUnsignedByte().toBoolean()
